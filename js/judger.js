@@ -71,7 +71,8 @@ function loadXmlHttpObject(url,error_userid){
 	
 function check_input_pwd(userid, passwd,errorbox) {
 
-alert(userid);
+alert("aksjfa;f");
+
     var pwd = document.getElementById(passwd).value;
 	var url = "../judger_login.class.php?id="+userid+"&passwd="+pwd;
 	alert(url);
