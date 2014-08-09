@@ -60,6 +60,7 @@ include_once ("autoload.php");
                             </div>
                             <!-- /.col-lg-6 -->
                         </div>
+                        <br/>
 							<p id="errorbox" class="error_style"></p>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -112,10 +113,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																						<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																								<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																		<?php
+																																			<?php
 	echo "</tr>";
 }
 ?>
