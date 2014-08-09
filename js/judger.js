@@ -40,7 +40,7 @@ if (false == flag) {
 function loadXmlHttpObject(url){
  alert("loadXmlHttpObject");
 	var xmlHttpRequest; //定义一个全局对象
-    var textHTML;
+   var textHTML;
 	if(window.ActiveXObject){ //IE的低版本系类
 		xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
  	}else{
@@ -52,14 +52,14 @@ function loadXmlHttpObject(url){
         if(xmlHttpRequest.readyState == 4){
             if(xmlHttpRequest.status == 200){
                  textHTML=xmlHttpRequest.responseText;
-            alert("内部 "+textHTML);
+            document.getElementById(errorbox).innerHTML=textHTML;
             } 
         }
     };
-    alert("外部 "+textHTML);
-		xmlHttpRequest.open("get",url,true);
+
+		xmlHttpRequest.open("get",url,false);
         xmlHttpRequest.send(null);
-		return "false";
+		alert(textHTML);
 }
 
 	
@@ -73,16 +73,10 @@ function check_input_pwd(userid, passwd,errorbox) {
 
     if (pwd =="") {
         document.getElementById(errorbox).innerHTML="请输入确认密码!";
-     return false;   
+     return;   
     }
-    result = loadXmlHttpObject(url);
+    result = loadXmlHttpObject(url,errorbox);
     
-     if("false" == result){
-        document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!";
-        return false;
-    }else{
-		return true;
-	}
 }
 
 
