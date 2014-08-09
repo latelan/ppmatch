@@ -52,11 +52,11 @@ function loadXmlHttpObject(url){
         if(xmlHttpRequest.readyState == 4){
             if(xmlHttpRequest.status == 200){
                  textHTML=xmlHttpRequest.responseText;
-            alert(textHTML);
+            alert("内部 "+textHTML);
             } 
         }
     };
-    alert(textHTML);
+    alert("外部 "+textHTML);
 		xmlHttpRequest.open("get",url,true);
         xmlHttpRequest.send(null);
 		return "false";
