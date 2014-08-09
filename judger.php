@@ -42,7 +42,7 @@ include_once ("autoload.php");
                         <span id="text_team_score" class="team_text_style"></span>
                         <strong>分,请输入密码确认!</strong>
                     </div>
-	           <form action="judger.php" method="post" id="judger" name="judger">
+	             <form action="judger.php" method="post" id="judger" name="judger">
 
                         <div class="row modal_pwd_positaton">
                             <div class="col-lg-6">
@@ -107,10 +107,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																			<td><?php echo $team_all_info[$key][$keys];?></td>
+								<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-							<?php
+											<?php
 	echo "</tr>";
 }
 ?>
@@ -145,7 +145,7 @@ foreach ($team_all_info as $key => $value) {
                 </div>
                 <!-- /.col-lg-6 -->
 
-                <button class="btn btn-primary  onclick="search()">提交</button>
+                <button class="btn btn-primary"  onclick="search()">提交</button>
             </div>
         </div>
         <!--end add_score_positation-->
@@ -153,7 +153,7 @@ foreach ($team_all_info as $key => $value) {
 
 
 <?php
-echo "tstasgfa";
+
 // if (isset($_POST['submit'])) {
 // 	if (isset($_SESSION['userid'])) {
 
