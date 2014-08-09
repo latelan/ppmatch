@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("autoload.php");
+include_once ("autoload.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +20,9 @@ include_once("autoload.php");
 		<link href="css/from.css" rel="stylesheet">
 		<link href="css/judger.css" rel="stylesheet">
 
+    <script src="js/jquery.min.js"></script>
+    <script charset="utf-8" language="javascript" src="js/judger.js" type="text/javascript"></script>
+
 	</head>
 
 	<body>
@@ -36,39 +39,39 @@ include_once("autoload.php");
 
 <?php
 
-if ($_GET['action'] =="logout")
-{
-	if (isset($_SESSION['userid'])){
+if ($_GET['action'] == "logout") {
+	if (isset($_SESSION['userid'])) {
 		unset($_SESSION['userid']);
-		setCookie("passwd","",0);
+		setCookie("passwd", "", 0);
+		echo "<script type='text/javascript'>location.replace(location.href);</script>";
 		echo "<div class='alert alert-info'>\n";
 		echo "<strong>提示!</strong>注销成功!</strong>\n";
 		echo "</div>\n";
 	}
 }
 
-if(isset($_SESSION['userid'])){
+if (isset($_SESSION['userid'])) {
 	header("Location: judger.php");
 	echo "<div class=\"alert alert-info\">\n";
 	echo "<strong>提示！</strong>"."亲，您已登录系统了！<a href=\"judger.php\">进入</a>\n";
 	echo "</div>\n";
-}else if(isset($_POST['sub'])){ 
+} else if (isset($_POST['sub'])) {
 
-	if(!empty($_POST['user']) and !empty($_POST['passwd'])){
-		
-		$opter = new judger_login($_POST['user'],$_POST['passwd']);
-		$result = $opter->getResult();	
-		if(true == $result){
-		$_SESSION[userid]=$_POST['user'];
+	if (!empty($_POST['user']) and !empty($_POST['passwd'])) {
 
-		setcookie("user",$_POST['user'],time()+3600);   //设置COOKIE的有效时间为1小时
-        setcookie("passwd",$_POST['passwd'],time()+3600);   //设置COOKIE的有效时间为1小时
+		$opter  = new judger_login($_POST['user'], $_POST['passwd']);
+		$result = $opter->getResult();
+		if (true == $result) {
+			$_SESSION[userid] = $_POST['user'];
 
-		echo "<script>window.location.href='judger.php';</script>";
-	}else{
-		echo "<script>alert('用户名或密码输入错误!');window.location.href='judger_login.php';</script>";
+			setcookie("user", $_POST['user'], time()+3600);//设置COOKIE的有效时间为1小时
+			setcookie("passwd", $_POST['passwd'], time()+3600);//设置COOKIE的有效时间为1小时
+
+			echo "<script>window.location.href='judger.php';</script>";
+		} else {
+			echo "<script>alert('用户名或密码输入错误!');window.location.href='judger_login.php';</script>";
+		}
 	}
-}
 }
 ?>
 		<div class="container">
@@ -76,11 +79,12 @@ if(isset($_SESSION['userid'])){
 			<!-- 关键部分:<form> -->
 			<form action="judger_login.php" method="post" class="form-signin" role="form">
 				<h2 class="form-signin-heading">裁判登录</h2>
-				<input type="text" class="form-control" placeholder="请输入用户名" name="user" value="<?php echo $_COOKIE['user'];?>" />
-				<input type="password" class="form-control" placeholder="请输入密码" name="passwd" value="<?php echo $_COOKIE['passwd']; ?>"/><br />
-				<button class="btn btn-lg btn-primary btn-block" type="submit" id="sub" name="sub">登录</button>
+				<input type="text" class="form-control" placeholder="请输入用户名" name="user" id='user' value="<?php echo $_COOKIE['user'];?>" />
+				<input type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd" value="<?php echo $_COOKIE['passwd'];?>"/><br />
+				<button type='button' class='btn btn-primary' name='submit' id='submit'  onclick=\"check_input_pwd( '<script type="text/javascript">document.getElementById(user).value();</script>', 'passwd','errorbox' ,'submit')\">登录</button>
+				<!-- <button class="btn btn-lg btn-primary btn-block" type="submit" id="sub" name="sub">登录</button> -->
 			</form>
-
+<p id="errorbox" class="error_style"></p>
 		</div> <!-- /container -->
 
 	</body>
