@@ -159,6 +159,7 @@ if (isset($_POST['submit'])) {
 		// $passwd = $_POST['passwd'];
 		// $userid = $_SESSION['userid'];
         echo "test test test!":
+        echo "one more come again";
 		// echo "<script>judger_err_reminder(\"$userid\",\"$passwd\");</script>";
 		//	$oper   = new judger_login($userid, $passwd);
 		//	$result = $oper->getResult();
