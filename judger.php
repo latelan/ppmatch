@@ -42,8 +42,7 @@ include_once ("autoload.php");
                         <span id="text_team_score" class="team_text_style"></span>
                         <strong>分,请输入密码确认!</strong>
                     </div>
-                    <form action="judger.php" method="post" onsubmit="return check_input_pwd()" id="judger" name="judger">
-
+	<form action="judger.php" method="post" id="judger" name="judger">
 
                         <div class="row modal_pwd_positaton">
                             <div class="col-lg-6">
@@ -157,6 +156,29 @@ foreach ($team_all_info as $key => $value) {
 
 if (isset($_POST['submit'])) {
 	if (isset($_SESSION['userid'])) {
+<<<<<<< HEAD
+		$passwd = $_POST['passwd'];
+		$userid = $_SESSION['userid'];
+
+//	$oper   = new judger_login($userid, $passwd);
+//	$result = $oper->getResult();
+//	if (true == $result) {
+//		$team_id    = $_POST['team_id'];
+//		$team_score = $_POST['team_score'];
+//		
+//		$save       = new judger($team_id, $team_score);
+//		$save->saveTeamScore();
+//		$rest = $save->getResult();
+//		if (false == $rest) {
+//			echo "<script>alert(糟糕！数据无法存储！);window.location.href='judger.php';</script>";
+//		}else{
+//			echo "<script language=JavaScript>window.location.replace(location.href);</script>";
+//		}
+//	}else{
+//		echo "<script>javascript:err_reminder()</script>";
+//	}
+} else {
+=======
 		// $passwd = $_POST['passwd'];
 		// $userid = $_SESSION['userid'];
         echo "test test test!":
@@ -180,6 +202,7 @@ if (isset($_POST['submit'])) {
 		//		echo "<script>javascript:err_reminder()</script>";
 		//	}
 	} else {
+>>>>>>> ec96b80f09ac44d3ddc5cbe9ac08e5215068e087
 		echo "<script>alert(你还没登录，无法提交!);<a href='judger_login.php'>返回登录</a>;</script>\n";
 
 	}
