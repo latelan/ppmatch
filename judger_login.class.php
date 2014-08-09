@@ -39,7 +39,7 @@ $password = $_GET['passwd'];
 $login    = new judger_login($username, $password);
 $result   = $login->getResult();
 if (false == $result) {
-	echo "你输入的密码有误，请重新输入!";
+	echo "false";
 }
 
 ?>
