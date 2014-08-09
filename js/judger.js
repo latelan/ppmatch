@@ -52,18 +52,17 @@ function loadXmlHttpObject(url){
         if(xmlHttpRequest.readyState == 4){
             if(xmlHttpRequest.status == 200){
                  textHTML=xmlHttpRequest.responseText;
-            document.getElementById(errorbox).innerHTML=textHTML;
             } 
         }
     };
 
 		xmlHttpRequest.open("get",url,false);
         xmlHttpRequest.send(null);
-		alert("tstad "+textHTML);
+		return textHTML;
 }
 
 	
-function check_input_pwd(userid, passwd,errorbox) {
+function check_input_pwd(userid, passwd,errorbox,formid) {
 
 
     var pwd = document.getElementById(passwd).value;
@@ -76,6 +75,14 @@ function check_input_pwd(userid, passwd,errorbox) {
      return;   
     }
     result = loadXmlHttpObject(url,errorbox);
+
+    if ("false" == result)
+    {
+        document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!"
+        return;
+    }
+
+    document.getElementById(formid).submit();
     
 }
 
