@@ -46,7 +46,8 @@ include_once ("autoload.php");
 
 $userid = $_SESSION['userid'];
 ?>
-<form action="judger.php" onsubmit="return check_input_pwd( 'afdaf', 'modal_pwd','errorbox' )" method='post' id='judger' name='judger'>
+<!-- onsubmit="return check_input_pwd( 'afdaf', 'modal_pwd','errorbox' )" -->
+<form action="judger.php"  method='post' id='judger' name='judger'>
 
                         <div class="row modal_pwd_positaton">
                             <div class="col-lg-6">
@@ -66,7 +67,7 @@ $userid = $_SESSION['userid'];
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                            <button type="submit" class="btn btn-primary" name="submit" id="submit" >确定</button>
+                            <button type="button" class="btn btn-primary" name="submit" id="submit"  onclick="check_input_pwd( 'afdaf', 'modal_pwd','errorbox' )">确定</button>
 
                         </div>
                     </form>
@@ -111,10 +112,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																				<td><?php echo $team_all_info[$key][$keys];?></td>
+																														<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																	<?php
+																						<?php
 	echo "</tr>";
 }
 ?>
