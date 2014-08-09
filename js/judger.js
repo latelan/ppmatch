@@ -47,18 +47,19 @@ function loadXmlHttpObject(url){
 			xmlHttpRequest = new XMLHttpRequest(); //非IE系列的浏览器，但包括IE7 IE8
 		}	
 		
-		xmlHttpRequest.open("get",url,true);
-											
-		xmlHttpRequest.onreadystatechange=function(){
-		if(xmlHttpRequest.readyState == 4){
-			if(xmlHttpRequest.status == 200){
-				 textHTML=xmlHttpRequest.responseText;
+                                            
+        xmlHttpRequest.onreadystatechange=function(){
+        if(xmlHttpRequest.readyState == 4){
+            if(xmlHttpRequest.status == 200){
+                 textHTML=xmlHttpRequest.responseText;
             alert(textHTML);
             } 
         }
     };
+    alert(textHTML);
+		xmlHttpRequest.open("get",url,true);
         xmlHttpRequest.send(null);
-		return textHTML;
+		return "false";
 }
 
 	
