@@ -69,12 +69,14 @@ function check_input_pwd(userid, passwd,errorbox) {
 	var url = "../judger_login.class.php?id="+userid+"&passwd="+pwd;
 	var  result;
 	
-	result = loadXmlHttpobject(url,errorbox);
 
     if (pwd =="") {
         document.getElementById(errorbox).innerHTML="请输入确认密码!";
      return false;   
-    }else if(false == result){
+    }
+    result = loadXmlHttpobject(url);
+    alert(result);
+     if(false == result){
         document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!";
         return false;
     }else{
