@@ -53,11 +53,11 @@ function loadXmlHttpObject(url){
 		if(xmlHttpRequest.readyState == 4){
 			if(xmlHttpRequest.status == 200){
 				 textHTML=xmlHttpRequest.responseText;
-			} 
-		}
-	};
+            alert(textHTML);
+            } 
+        }
+    };
         xmlHttpRequest.send(null);
-    alert(textHTML);
 		return "false";
 }
 
