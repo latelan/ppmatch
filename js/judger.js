@@ -59,7 +59,7 @@ function loadXmlHttpObject(url){
 
 		xmlHttpRequest.open("get",url,false);
         xmlHttpRequest.send(null);
-		alert(textHTML);
+		alert("tstad "+textHTML);
 }
 
 	
