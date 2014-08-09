@@ -56,8 +56,9 @@ function loadXmlHttpObject(url){
 			} 
 		}
 	};
-		xmlHttpRequest.send(null);
-		return textHTML;
+        xmlHttpRequest.send(null);
+    alert(textHTML);
+		return "false";
 }
 
 	
