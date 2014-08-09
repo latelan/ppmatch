@@ -82,7 +82,7 @@ function check_input_pwd(userid, passwd,errorbox,formid) {
         return;
     }
 
-    document.getElementById(formid).setAttibute("type","submit");
+    document.getElementById(formid).setAttribute("type","submit");
     
 }
 
