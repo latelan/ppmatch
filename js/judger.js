@@ -38,7 +38,7 @@ if (false == flag) {
 }
 
 function loadXmlHttpObject(url){
- alert("loadXmlHttpObject");
+ // alert("loadXmlHttpObject");
 	var xmlHttpRequest; //定义一个全局对象
    var textHTML;
 	if(window.ActiveXObject){ //IE的低版本系类
