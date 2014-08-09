@@ -74,11 +74,9 @@ function check_input_pwd(userid, passwd,errorbox) {
 
     var pwd = document.getElementById(passwd).value;
 	var url = "../judger_login.class.php?id="+userid+"&passwd="+pwd;
-	alert(pwd);
-    alert(userid)
 	var  result;
 	
-	   result = loadXmlHttpobject(url,errorbox);
+	// result = loadXmlHttpobject(url,errorbox);
 
     if (pwd =="") {
         alert("请输入确认密码!");
