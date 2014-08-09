@@ -37,9 +37,10 @@ if (false == flag) {
 
 }
 
-function loadXmlHttpObject(url,error_userid){
+function loadXmlHttpObject(url){
 //alert("loadXmlHttpObject");
 	var xmlHttpRequest; //定义一个全局对象
+    var textHTML;
 	if(window.ActiveXObject){ //IE的低版本系类
 		xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
  	}else{
@@ -51,21 +52,13 @@ function loadXmlHttpObject(url,error_userid){
 		xmlHttpRequest.onreadystatechange=function(){
 		if(xmlHttpRequest.readyState == 4){
 			if(xmlHttpRequest.status == 200){
-				var textHTML=xmlHttpRequest.responseText;
-				var info;	
-				if(false == textHTML)
-				{
-					info = "用户名或密码输入错误!";
-					document.getElementById(error_userid).innerHTML=info;
-				//	document.getElementById(submit).disabled=true;
-					return false;
-				}
-					
+				 textHTML=xmlHttpRequest.responseText;
+		
 			} 
 		}
 	};
 		xmlHttpRequest.send(null);
-		return true;
+		return textHTML;
 }
 
 	
@@ -76,12 +69,13 @@ function check_input_pwd(userid, passwd,errorbox) {
 	var url = "../judger_login.class.php?id="+userid+"&passwd="+pwd;
 	var  result;
 	
-	// result = loadXmlHttpobject(url,errorbox);
+	result = loadXmlHttpobject(url,errorbox);
 
     if (pwd =="") {
         document.getElementById(errorbox).innerHTML="请输入确认密码!";
      return false;   
     }else if(false == result){
+        document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!";
         return false;
     }else{
 		return true;
