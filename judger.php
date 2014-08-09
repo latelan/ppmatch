@@ -105,6 +105,7 @@ $team_all_info = $oper->displayTable();
 
 foreach ($team_all_info as $key => $value) {
 	echo "<tr class='success'>";
+    
 	foreach ($value as $keys => $values) {
 		?>
 									<td><?php echo $team_all_info[$key][$keys];?></td>
