@@ -36,7 +36,13 @@ class judger_login {
 
 $username = $_GET['id'];
 $password = $_GET['passwd'];
-echo "name ".$username;
-$login = new judger_login($username, $password);
-echo $login->getResult();
+$login    = new judger_login($username, $password);
+$result   = $login->getResult();
+if (false == $result) {
+	echo "false";
+} else {
+
+	echo "true";
+}
+
 ?>
