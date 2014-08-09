@@ -1,40 +1,41 @@
 ///修改模态框中数据
 function search() {
 
+alert("dfadfadf");
+//    var val = document.getElementById("Team").value;
+//    if (val == "") {
+//        alert("请输入队伍编号！");
+//    }
+//    var score=document.getElementById("team_score").value;
+//    var info = document.getElementById("info"); //表格
+//    var span = document.getElementById('text_team_name');
+//    var modal_score = document.getElementById("text_team_score");
+//    var team_name;
+//    var flag = false;
+//    for (var i = 1; i < info.rows.length; i++) {
+//        var cell_value = info.rows[i].cells[0].innerHTML;
+//
+//        if (val == cell_value) {
+//            team_name = info.rows[i].cells[1].innerHTML;
+//            span.innerHTML = team_name;
+//            flag = true;
+//            break;
+//        }
+//    }
+//    if (score == "") {
+//        score = 1;
+//    }
+//    modal_score.innerHTML = score;
+//    document.getElementById("hidden_team_name").value=val;
+//    document.getElementById("hidden_team_score").value=score;
+//   
+//if (false == flag) {
+//        alert("你输入队号不存在,请重新输入!");
+//        $('#myModal').modal('hide');
+//    }else{
+//        $('#myModal').modal('show');
+//    }
 
-    var val = document.getElementById("Team").value;
-    if (val == "") {
-        alert("请输入队伍编号！");
-    }
-    var score=document.getElementById("team_score").value;
-    var info = document.getElementById("info"); //表格
-    var span = document.getElementById('text_team_name');
-    var modal_score = document.getElementById("text_team_score");
-    var team_name;
-    var flag = false;
-    for (var i = 1; i < info.rows.length; i++) {
-        var cell_value = info.rows[i].cells[0].innerHTML;
-
-        if (val == cell_value) {
-            team_name = info.rows[i].cells[1].innerHTML;
-            span.innerHTML = team_name;
-            flag = true;
-            break;
-        }
-    }
-    if (score == "") {
-        score = 1;
-    }
-    modal_score.innerHTML = score;
-    document.getElementById("hidden_team_name").value=val;
-    document.getElementById("hidden_team_score").value=score;
-   
-if (false == flag) {
-        alert("你输入队号不存在,请重新输入!");
-        $('#myModal').modal('hide');
-    }else{
-        $('#myModal').modal('show');
-    }
 }
 
 function loadXmlHttpObject(url,error_userid){

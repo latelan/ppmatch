@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['userid']))
-{
+if (!isset($_SESSION['userid'])) {
 	header("Location:judger_login.php");
 	exit();
 }
@@ -104,13 +103,13 @@ $oper          = new judger();
 $team_all_info = $oper->displayTable();
 
 foreach ($team_all_info as $key => $value) {
-		echo "<tr class='success'>";
-		foreach ($value as $keys => $values) {
+	echo "<tr class='success'>";
+	foreach ($value as $keys => $values) {
 		?>
-					<td><?php echo $team_all_info[$key][$keys];?></td>
+									<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-<?php
+		<?php
 	echo "</tr>";
 }
 ?>
@@ -156,6 +155,7 @@ foreach ($team_all_info as $key => $value) {
 
 if (isset($_POST['submit'])) {
 	if (isset($_SESSION['userid'])) {
+<<<<<<< HEAD
 		$passwd = $_POST['passwd'];
 		$userid = $_SESSION['userid'];
 
@@ -177,6 +177,31 @@ if (isset($_POST['submit'])) {
 //		echo "<script>javascript:err_reminder()</script>";
 //	}
 } else {
+=======
+		// $passwd = $_POST['passwd'];
+		// $userid = $_SESSION['userid'];
+        echo "test test test!":
+        echo "one more come again";
+		// echo "<script>judger_err_reminder(\"$userid\",\"$passwd\");</script>";
+		//	$oper   = new judger_login($userid, $passwd);
+		//	$result = $oper->getResult();
+		//	if (true == $result) {
+		//		$team_id    = $_POST['team_id'];
+		//		$team_score = $_POST['team_score'];
+		//
+		//		$save       = new judger($team_id, $team_score);
+		//		$save->saveTeamScore();
+		//		$rest = $save->getResult();
+		//		if (false == $rest) {
+		//			echo "<script>alert(糟糕！数据无法存储！);window.location.href='judger.php';</script>";
+		//		}else{
+		//			echo "<script language=JavaScript>window.location.replace(location.href);</script>";
+		//		}
+		//	}else{
+		//		echo "<script>javascript:err_reminder()</script>";
+		//	}
+	} else {
+>>>>>>> ec96b80f09ac44d3ddc5cbe9ac08e5215068e087
 		echo "<script>alert(你还没登录，无法提交!);<a href='judger_login.php'>返回登录</a>;</script>\n";
 
 	}
