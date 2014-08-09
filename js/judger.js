@@ -74,7 +74,7 @@ function check_input_pwd(userid, passwd,errorbox) {
 
     var pwd = document.getElementById(passwd).value;
 	var url = "../judger_login.class.php?id="+userid+"&passwd="+pwd;
-	alert(url);
+	// alert(url);
 	var  result;
 	
 	   result = loadXmlHttpobject(url,errorbox);
