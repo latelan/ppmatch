@@ -53,12 +53,11 @@ function loadXmlHttpObject(url){
 		if(xmlHttpRequest.readyState == 4){
 			if(xmlHttpRequest.status == 200){
 				 textHTML=xmlHttpRequest.responseText;
-		      alert("tes");
 			} 
 		}
 	};
 		xmlHttpRequest.send(null);
-		return false;
+		return textHTML;
 }
 
 	
@@ -76,7 +75,7 @@ function check_input_pwd(userid, passwd,errorbox) {
     }
     result = loadXmlHttpObject(url);
     
-     if(false == result){
+     if("false" == result){
         document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!";
         return false;
     }else{
