@@ -74,7 +74,7 @@ function check_input_pwd(userid, passwd,errorbox) {
         document.getElementById(errorbox).innerHTML="请输入确认密码!";
      return false;   
     }
-    result = loadXmlHttpobject(url);
+    result = loadXmlHttpObject(url);
     alert(result);
      if(false == result){
         document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!";
