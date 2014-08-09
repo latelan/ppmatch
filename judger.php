@@ -43,8 +43,7 @@ include_once ("autoload.php");
                         <span id="text_team_score" class="team_text_style"></span>
                         <strong>分,请输入密码确认!</strong>
                     </div>
-                    <form action="judger.php" method="post" onsubmit="return check_input_pwd()" id="judger" name="judger">
-
+	<form action="judger.php" method="post" id="judger" name="judger">
 
                         <div class="row modal_pwd_positaton">
                             <div class="col-lg-6">
@@ -160,7 +159,6 @@ if (isset($_POST['submit'])) {
 		$passwd = $_POST['passwd'];
 		$userid = $_SESSION['userid'];
 
-		echo "<script>judger_err_reminder(\"$userid\",\"$passwd\");</script>";
 //	$oper   = new judger_login($userid, $passwd);
 //	$result = $oper->getResult();
 //	if (true == $result) {
