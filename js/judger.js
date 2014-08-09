@@ -53,7 +53,7 @@ function loadXmlHttpObject(url){
 		if(xmlHttpRequest.readyState == 4){
 			if(xmlHttpRequest.status == 200){
 				 textHTML=xmlHttpRequest.responseText;
-		      alert("tes"+textHTML);
+		      alert("tes");
 			} 
 		}
 	};
