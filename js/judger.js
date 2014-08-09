@@ -58,7 +58,7 @@ function loadXmlHttpObject(url){
 		}
 	};
 		xmlHttpRequest.send(null);
-		return textHTML;
+		return false;
 }
 
 	
