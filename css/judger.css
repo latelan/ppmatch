@@ -86,8 +86,8 @@ body {
     margin-bottom: 40px;
 }
 .logout_nav_position {
-	margin-left:90%;
-	margin-top: 30px;
+    margin-left: 90%;
+    margin-top: 30px;
 }
 thead>tr>th {
     text-align: center;
@@ -113,4 +113,9 @@ thead>tr>th {
 }
 .text_descr_style {
     text-align: center;
+}
+.error_style {
+    font-stretch: semi-expanded;
+    text-align: center;
+    color: #b41c9d;
 }
