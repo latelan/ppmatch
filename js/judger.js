@@ -38,27 +38,27 @@ if (false == flag) {
 }
 
 function loadXmlHttpObject(url){
-alert("loadXmlHttpObject");
-	// var xmlHttpRequest; //定义一个全局对象
- //    var textHTML;
-	// if(window.ActiveXObject){ //IE的低版本系类
-	// 	xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
- // 	}else{
-	// 		xmlHttpRequest = new XMLHttpRequest(); //非IE系列的浏览器，但包括IE7 IE8
-	// 	}	
+// alert("loadXmlHttpObject");
+	var xmlHttpRequest; //定义一个全局对象
+    var textHTML;
+	if(window.ActiveXObject){ //IE的低版本系类
+		xmlHttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+ 	}else{
+			xmlHttpRequest = new XMLHttpRequest(); //非IE系列的浏览器，但包括IE7 IE8
+		}	
 		
-	// 	xmlHttpRequest.open("get",url,true);
+		xmlHttpRequest.open("get",url,true);
 											
-	// 	xmlHttpRequest.onreadystatechange=function(){
-	// 	if(xmlHttpRequest.readyState == 4){
-	// 		if(xmlHttpRequest.status == 200){
-	// 			 textHTML=xmlHttpRequest.responseText;
-	// 	      alert(textHTML);
-	// 		} 
-	// 	}
-	// };
-	// 	xmlHttpRequest.send(null);
-	// 	return textHTML;
+		xmlHttpRequest.onreadystatechange=function(){
+		if(xmlHttpRequest.readyState == 4){
+			if(xmlHttpRequest.status == 200){
+				 textHTML=xmlHttpRequest.responseText;
+		      alert(textHTML);
+			} 
+		}
+	};
+		xmlHttpRequest.send(null);
+		return textHTML;
 }
 
 	
