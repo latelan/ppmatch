@@ -1,11 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['userid'])) {
-	header("Location:judger_login.php");
-	exit();
-}
-include_once ("autoload.php");
-?>
+<?php session_start(); if (!isset($_SESSION[ 'userid'])) { header( "Location:judger_login.php"); exit(); } include_once ( "autoload.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,8 +36,8 @@ include_once ("autoload.php");
                         <strong>分,请输入密码确认!</strong>
                     </div>
 
-<!-- onsubmit="return check_input_pwd( 'afdaf', 'modal_pwd','errorbox' )" -->
-<form action="judger.php"  method='post' id='judger_form' name='judger_form'>
+
+                    <form action="judger.php" method='post' id='judger_form' name='judger_form'>
 
                         <div class="row modal_pwd_positaton">
                             <div class="col-lg-6">
@@ -53,21 +46,17 @@ include_once ("autoload.php");
                                        <span class="glyphicon glyphicon-lock" ></span>
                                     </span>
                                     <input type="password" class="form-control" placeholder="请输入密码" name="passwd" id="modal_pwd" />
-                                    <input type="hidden" name="team_id" value=""  id="hidden_team_name" />
-                        			<input type="hidden" name="team_score" value=""  id="hidden_team_score" />
+                                    <input type="hidden" name="team_id" value="" id="hidden_team_name" />
+                                    <input type="hidden" name="team_score" value="" id="hidden_team_score" />
                                 </div>
                                 <!-- /input-group -->
                             </div>
                             <!-- /.col-lg-6 -->
                         </div>
-							<strong id="errorbox" class="error_style"></strong>
+                        <p id="errorbox" class="error_style"></p>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-<?php
-
-$userid = $_SESSION['userid'];
-echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  onclick=\"check_input_pwd( '$userid', 'modal_pwd','errorbox' ,'submit')\">确定</button>";
-?>
+                            <?php $userid=$ _SESSION[ 'userid']; echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  onclick=\"check_input_pwd( '$userid', 'modal_pwd', 'errorbox' , 'submit')\ ">确定</button>"; ?>
 
                         </div>
                     </form>
@@ -77,15 +66,17 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
     </div>
 
 
-<div class="container-fluid">
+    <div class="container-fluid">
         <div id="nav_position">
             <ul class="nav nav-pills " role="tablist">
                 <li role="presentation">
-				<a href="judger.php" id="username" class="username"><?php echo '[ '.$_SESSION['userid'].' ]';?></a>
+                    <a href="judger.php" id="username" class="username">
+                        <?php echo '[ '.$_SESSION[ 'userid']. ' ]';?>
+                    </a>
                 </li>
                 <li role="presentation">
-				<a href="index.php">主页</a>
-				</li>
+                    <a href="index.php">主页</a>
+                </li>
                 <li role="presentation"><a href="judger_login.php?action=logout">退出</a>
                 </li>
             </ul>
@@ -103,23 +94,14 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
 
             </thead>
             <tbody class="text_postition">
-<?php
-$oper          = new judger();
-$team_all_info = $oper->displayTable();
-
-foreach ($team_all_info as $key => $value) {
-	echo "<tr class='success'>";
-
-	foreach ($value as $keys => $values) {
-		?>
-																																																		<td><?php echo $team_all_info[$key][$keys];?></td>
-		<?php
-	}?>
-																																<?php
-	echo "</tr>";
-}
-?>
-</tbody>
+                <?php $oper=n ew judger(); $team_all_info=$ oper->displayTable(); foreach ($team_all_info as $key => $value) { echo "
+                <tr class='success'>"; foreach ($value as $keys => $values) { ?>
+                    <td>
+                        <?php echo $team_all_info[$key][$keys];?>
+                    </td>
+                    <?php }?>
+                    <?php echo "</tr>"; } ?>
+            </tbody>
         </table>
 
 
@@ -150,46 +132,27 @@ foreach ($team_all_info as $key => $value) {
                 </div>
                 <!-- /.col-lg-6 -->
 
-                <button class="btn btn-primary"  onclick="search()">提交</button>
+                <button class="btn btn-primary" onclick="search()">提交</button>
             </div>
         </div>
         <!--end add_score_positation-->
     </div>
 
 
-<?php
-
-// if (isset($_POST['submit'])) {
-// 	if (isset($_SESSION['userid'])) {
-
-// 		$passwd = $_POST['passwd'];
-// 		$userid = $_SESSION['userid'];
-
-//	$oper   = new judger_login($userid, $passwd);
-//	$result = $oper->getResult();
-//	if (true == $result) {
-//		$team_id    = $_POST['team_id'];
-//		$team_score = $_POST['team_score'];
-//
-//		$save       = new judger($team_id, $team_score);
-//		$save->saveTeamScore();
-//		$rest = $save->getResult();
-//		if (false == $rest) {
-//			echo "<script>alert(糟糕！数据无法存储！);window.location.href='judger.php';</script>";
-//		}else{
-//			echo "<script language=JavaScript>window.location.replace(location.href);</script>";
-//		}
-//	}else{
-//		echo "<script>javascript:err_reminder()</script>";
-// 	}
-// } else {
-
-// } else {
-// 	echo "<script>alert(你还没登录，无法提交!);<a href='judger_login.php'>返回登录</a>;</script>\n";
-
-// }
-// }
-?>
+    <?php // if (isset($_POST[ 'submit'])) { // if (isset($_SESSION[ 'userid'])) { // $passwd=$ _POST[ 'passwd']; // $userid=$ _SESSION[ 'userid']; // $oper=n ew judger_login($userid, $passwd); // $result=$ oper->getResult(); // if (true == $result) { // $team_id = $_POST['team_id']; // $team_score = $_POST['team_score']; // // $save = new judger($team_id, $team_score); // $save->saveTeamScore(); // $rest = $save->getResult(); // if (false == $rest) { // echo "
+    <script>
+        alert(糟糕！数据无法存储！);
+        window.location.href = 'judger.php';
+    </script>"; // }else{ // echo "
+    <script language=JavaScript>
+        window.location.replace(location.href);
+    </script>"; // } // }else{ // echo "
+    <script>
+        javascript: err_reminder()
+    </script>"; // } // } else { // } else { // echo "
+    <script>
+        alert(你还没登录，无法提交!); < a href = 'judger_login.php' > 返回登录 < /a>;
+    </script>\n"; // } // } ?>
 </body>
 
 </html>
