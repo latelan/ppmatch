@@ -46,7 +46,7 @@ include_once ("autoload.php");
 
 $userid = $_SESSION['userid'];
 
-echo "<form action=\"judger.php\" onsubmit=\"return check_input_pwd(\"$userid\", 'modal_pwd','errorbox' )\" method='post' id='judger' name='judger'>";
+echo "<form action=\"judger.php\" onsubmit=\"return check_input_pwd( $userid, 'modal_pwd','errorbox' )\" method='post' id='judger' name='judger'>";
 ?>
                         <div class="row modal_pwd_positaton">
                             <div class="col-lg-6">
@@ -111,10 +111,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-										<td><?php echo $team_all_info[$key][$keys];?></td>
+												<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-												<?php
+													<?php
 	echo "</tr>";
 }
 ?>
