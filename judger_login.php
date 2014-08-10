@@ -55,22 +55,17 @@ if (isset($_SESSION['userid'])) {
 	echo "<div class=\"alert alert-info\">\n";
 	echo "<strong>提示！</strong>"."亲，您已登录系统了！<a href=\"judger.php\">进入</a>\n";
 	echo "</div>\n";
-} else if (isset($_POST['sub'])) {
+} else if (isset($_POST['submit'])) {
 
 	if (!empty($_POST['user']) and !empty($_POST['passwd'])) {
 
-		$opter  = new judger_login($_POST['user'], $_POST['passwd']);
-		$result = $opter->getResult();
-		if (true == $result) {
 			$_SESSION[userid] = $_POST['user'];
 
 			setcookie("user", $_POST['user'], time()+3600);//设置COOKIE的有效时间为1小时
 			setcookie("passwd", $_POST['passwd'], time()+3600);//设置COOKIE的有效时间为1小时
 
 			echo "<script>window.location.href='judger.php';</script>";
-		} else {
-			echo "<script>alert('用户名或密码输入错误!');window.location.href='judger_login.php';</script>";
-		}
+		} 
 	}
 }
 ?>
@@ -81,7 +76,7 @@ if (isset($_SESSION['userid'])) {
 				<h2 class="form-signin-heading">裁判登录</h2>
 				<input type="text" class="form-control" placeholder="请输入用户名" name="user" id='user' value="<?php echo $_COOKIE['user'];?>" />
 				<input type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd" value="<?php echo $_COOKIE['passwd'];?>"/><br />
-				<button type='button' class='btn btn-primary' name='submit' id='submit'  onclick="check_login( 'user', 'passwd','errorbox' ,'submit')">登录</button>
+				<button type='button' class='btn btn-lg btn-primary btn-block' name='submit' id='submit'  onclick="check_login( 'user', 'passwd','errorbox' ,'submit')">登录</button>
 				<!-- <button class="btn btn-lg btn-primary btn-block" type="submit" id="sub" name="sub">登录</button> -->
 			</form>
 <p id="errorbox" class="error_style"></p>
