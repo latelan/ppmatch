@@ -59,15 +59,15 @@ if (isset($_SESSION['userid'])) {
 
 	if (!empty($_POST['user']) and !empty($_POST['passwd'])) {
 
-			$_SESSION[userid] = $_POST['user'];
+		$_SESSION[userid] = $_POST['user'];
 
-			setcookie("user", $_POST['user'], time()+3600);//设置COOKIE的有效时间为1小时
-			setcookie("passwd", $_POST['passwd'], time()+3600);//设置COOKIE的有效时间为1小时
+		setcookie("user", $_POST['user'], time()+3600);//设置COOKIE的有效时间为1小时
+		setcookie("passwd", $_POST['passwd'], time()+3600);//设置COOKIE的有效时间为1小时
 
-			echo "<script>window.location.href='judger.php';</script>";
-		} 
+		echo "<script>window.location.href='judger.php';</script>";
 	}
 }
+
 ?>
 		<div class="container">
 
