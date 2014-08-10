@@ -86,7 +86,7 @@ function check_input_pwd(userid, passwd,errorbox,formid) {
     
 }
 
-function check_login(userid, passwd,errorbox,formid))
+function check_login(userid, passwd,errorbox,formid)
 {
     alert("user");
     // var user=document.getElementById(userid).value;
