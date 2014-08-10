@@ -81,7 +81,7 @@ if (isset($_SESSION['userid'])) {
 				<h2 class="form-signin-heading">裁判登录</h2>
 				<input type="text" class="form-control" placeholder="请输入用户名" name="user" id='user' value="<?php echo $_COOKIE['user'];?>" />
 				<input type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd" value="<?php echo $_COOKIE['passwd'];?>"/><br />
-				<button type='button' class='btn btn-primary' name='submit' id='submit'  onclick=\"check_input_pwd( '<script type="text/javascript">document.getElementById(user).value();</script>', 'passwd','errorbox' ,'submit')\">登录</button>
+				<button type='button' class='btn btn-primary' name='submit' id='submit'  onclick="check_login( 'user', 'passwd','errorbox' ,'submit')">登录</button>
 				<!-- <button class="btn btn-lg btn-primary btn-block" type="submit" id="sub" name="sub">登录</button> -->
 			</form>
 <p id="errorbox" class="error_style"></p>
