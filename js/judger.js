@@ -90,6 +90,11 @@ function check_login(userid, passwd,errorbox,formid))
 {
 
     var user=document.getElementById(userid).value();
+    if(user == "")
+    {
+          document.getElementById(errorbox).innerHTML="请输入用户名!";
+     return; 
+    }
     check_input_pwd(user, passwd,errorbox,formid);
 }
 
