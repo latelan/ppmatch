@@ -131,6 +131,6 @@ function subkeyjudger(evt,userid, passwd,errorbox,formid)
     if (-1 == flag)
       return false;
   }
-return false;
+return true;
 }
 	
