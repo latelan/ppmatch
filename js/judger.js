@@ -34,7 +34,7 @@ if (false == flag) {
        $('#myModal').modal('hide');
    }else{
        // $('#myModal').modal('show');
-       $('#myModal').on('show.bs.modal',function(){
+       $('#myModal').on('show.bs.modal',function(modal_pwd){
        document.getElementById(modal_pwd).focus();
      });
    }
