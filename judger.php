@@ -16,6 +16,7 @@ include_once ("autoload.php");
     <title>intror</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/judger.css" rel="stylesheet">
+    <link href="css/my_css.css" rel="stylesheet">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -77,8 +78,9 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
     </div>
 
 
-<div class="container-fluid">
+<div class="container">
         <div id="nav_position">
+            <h3 class="text-muted">我是冠军</h3>
             <ul class="nav nav-pills " role="tablist">
                 <li role="presentation">
 				<a href="judger.php" id="username" class="username"><?php echo '[ '.$_SESSION['userid'].' ]';?></a>
@@ -112,10 +114,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																		<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																								<?php
+																																															<?php
 	echo "</tr>";
 }
 ?>
