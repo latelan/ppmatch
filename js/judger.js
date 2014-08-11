@@ -79,6 +79,7 @@ function check_input_pwd(userid, passwd,errorbox,formid) {
     if ("false" == result)
     {
         document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!"
+        document.getElementById(errorbox).value="";
         return;
     }
 
