@@ -124,10 +124,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																																																		<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																												<?php
+																																																																																																<?php
 	echo "</tr>";
 }
 ?>
@@ -139,7 +139,7 @@ foreach ($team_all_info as $key => $value) {
             <p class="add_score_text_style">我--只为胜者加分</p>
 
             <div class="row inupt_positation_style">
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-5 col-sm-7">
                     <div class="input-group">
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-user"></span>
@@ -151,7 +151,7 @@ foreach ($team_all_info as $key => $value) {
                 <!-- /.col-lg-6 -->
 
 
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-5 col-sm-7">
                     <div class="input-group">
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-leaf"></span>
@@ -161,9 +161,8 @@ foreach ($team_all_info as $key => $value) {
                     <!-- /input-group -->
                 </div>
                 <!-- /.col-lg-6 -->
-
-                <button class="btn btn-primary"  onclick="searchform()" >提交</button>
             </div>
+                <button class="btn btn-primary"  onclick="searchform()" >提交</button>
         </div>
         <!--end add_score_positation-->
     </div>
