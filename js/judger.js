@@ -100,5 +100,12 @@ function check_login(userid, passwd,errorbox,formid)
     check_input_pwd(user, passwd,errorbox,formid);
 }
 
+function subkeycheck(userid, passwd,errorbox,formid)
+{
+    if (event.keyCode == 13)
+    {
+      check_login(userid, passwd,errorbox,formid);
+    }
+}
 
 	
