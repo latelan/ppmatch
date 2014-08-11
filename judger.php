@@ -69,7 +69,8 @@ include_once ("autoload.php");
 $userid = $_SESSION['userid'];
 echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  onclick=\"check_input_pwd( '$userid', 'modal_pwd','errorbox' ,'submit')\">确定</button>";
 ?>
-</div>
+
+                        </div>
                     </form>
                 </div>
             </div>
@@ -91,19 +92,19 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
             </ul>
         </div> -->
 
+        <div class="header">
         <ul class="nav nav-pills pull-right">
+            <li role="presentation">
+                <a href="judger.php" id="username" class="username"><?php echo '[ '.$_SESSION['userid'].' ]';?></a>
+                </li>
                 <li role="presentation">
                 <a href="index.html">主页</a>
                 </li>
-                <li role="presentation">
-                <a href="#">[ <?php eho $_SESSION['userid'] ;?> ]</a>
-                </li>
                 <li role="presentation"><a href="judger_login.php?action=logout">退出</a>
-            <!--     </li>
-            <li class="active" style="font-size:100%"><a href="judger_login.php">裁判登陆</a></li>
-            <li class="active" style="font-size:100%"><a href="status.php">比赛实况</a></li> -->
-        </ul>
-        <div class="header">
+                </li>
+<!--             <li class="active" style="font-size:100%"><a href="judger_login.php">裁判登陆</a></li>
+            <li class="active" style="font-size:100%"><a href="status.php">比赛实况</a></li>
+ -->        </ul>
         <h3 class="text-muted">我是冠军</h3>
     </div>
         <table class="table table-hover table-striped table-bordered table-responsive" id="info">
@@ -128,10 +129,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																												<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																													<?php
+																																																												<?php
 	echo "</tr>";
 }
 ?>
