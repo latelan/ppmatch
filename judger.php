@@ -93,6 +93,13 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
 
         <div class="header">
         <ul class="nav nav-pills pull-right">
+            <li role="presentation">
+                </li>
+                <li role="presentation">
+                <a href="index.html">主页</a>
+                </li>
+                <li role="presentation"><a href="judger_login.php?action=logout">退出</a>
+                </li>
             <li class="active" style="font-size:100%"><a href="judger_login.php">裁判登陆</a></li>
             <li class="active" style="font-size:100%"><a href="status.php">比赛实况</a></li>
         </ul>
@@ -120,10 +127,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																						<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																										<?php
+																																																												<?php
 	echo "</tr>";
 }
 ?>
