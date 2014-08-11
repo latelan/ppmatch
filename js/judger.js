@@ -29,8 +29,8 @@ function search() {
    document.getElementById("hidden_team_score").value=score;
   
 if (false == flag) {
-       alert("你输入队号不存在,请重新输入!");
        val="";
+       alert("你输入队号不存在,请重新输入!");
        $('#myModal').modal('hide');
    }else{
        $('#myModal').modal('show');
