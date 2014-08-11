@@ -102,9 +102,10 @@ function check_login(userid, passwd,errorbox,formid)
 
 function subkeycheck(userid, passwd,errorbox,formid)
 {
- 
+
     if (event.keyCode == 13)
     {
+      alert("dfadfadf");
       check_login(userid, passwd,errorbox,formid);
     }
 }
