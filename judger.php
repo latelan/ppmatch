@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if (!isset($_SESSION['userid'])) {
 	header("Location:judger_login.php");
@@ -133,10 +134,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																												<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																				<?php
+																																																																																					<?php
 	echo "</tr>";
 }
 ?>
@@ -153,7 +154,7 @@ foreach ($team_all_info as $key => $value) {
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-user"></span>
                         </span>
-                        <input type="text" class="form-control" placeholder="队伍编号" id="Team" onkeydown=" enterkeysearch(event)" />
+                        <input type="text" class="form-control" placeholder="队伍编号" id="Team" onkeydown=" enterkeysearch(event,'modal_pwd')" />
                     </div>
                     <!-- /input-group -->
                 </div>
