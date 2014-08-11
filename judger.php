@@ -180,6 +180,7 @@ if (isset($_POST['submit'])) {
 
 	$save = new judger($team_id, $team_score);
 	$save->saveTeamScore();
+
 	$rest = $save->getResult();
 	if (false == $rest) {
 		echo "<script>alert(糟糕！数据无法存储！);window.location.href='judger.php';</script>";
