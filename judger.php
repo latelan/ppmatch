@@ -84,7 +84,7 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
 				<a href="judger.php" id="username" class="username"><?php echo '[ '.$_SESSION['userid'].' ]';?></a>
                 </li>
                 <li role="presentation">
-				<a href="index.php">主页</a>
+				<a href="index.html">主页</a>
 				</li>
                 <li role="presentation"><a href="judger_login.php?action=logout">退出</a>
                 </li>
@@ -112,10 +112,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																		<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																				<?php
+																																								<?php
 	echo "</tr>";
 }
 ?>
@@ -159,36 +159,20 @@ foreach ($team_all_info as $key => $value) {
 
 <?php
 
-// if (isset($_POST['submit'])) {
-// 	if (isset($_SESSION['userid'])) {
+if (isset($_POST['submit'])) {
 
-// 		$passwd = $_POST['passwd'];
-// 		$userid = $_SESSION['userid'];
+	$team_id    = $_POST['team_id'];
+	$team_score = $_POST['team_score'];
 
-//	$oper   = new judger_login($userid, $passwd);
-//	$result = $oper->getResult();
-//	if (true == $result) {
-//		$team_id    = $_POST['team_id'];
-//		$team_score = $_POST['team_score'];
-//
-//		$save       = new judger($team_id, $team_score);
-//		$save->saveTeamScore();
-//		$rest = $save->getResult();
-//		if (false == $rest) {
-//			echo "<script>alert(糟糕！数据无法存储！);window.location.href='judger.php';</script>";
-//		}else{
-//			echo "<script language=JavaScript>window.location.replace(location.href);</script>";
-//		}
-//	}else{
-//		echo "<script>javascript:err_reminder()</script>";
-// 	}
-// } else {
-
-// } else {
-// 	echo "<script>alert(你还没登录，无法提交!);<a href='judger_login.php'>返回登录</a>;</script>\n";
-
-// }
-// }
+	$save = new judger($team_id, $team_score);
+	$save->saveTeamScore();
+	$rest = $save->getResult();
+	if (false == $rest) {
+		echo "<script>alert(糟糕！数据无法存储！);window.location.href='judger.php';</script>";
+	} else {
+		echo "<script language=JavaScript>window.location.replace(location.href);</script>";
+	}
+}
 ?>
 </body>
 
