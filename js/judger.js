@@ -1,5 +1,5 @@
 ///修改模态框中数据
-function searchform() {
+function searchform(modal_pwd) {
 
    var val = document.getElementById("Team").value;
    if (val == "") {
@@ -33,17 +33,20 @@ if (false == flag) {
        alert("你输入队号不存在,请重新输入!");
        $('#myModal').modal('hide');
    }else{
-       $('#myModal').modal('show');
+       // $('#myModal').modal('show');
+       $('#myModal').on('show.bs.modal',function(){
+       document.getElementById(modal_pwd).focus();
+     });
    }
 
 }
 
-function enterkeysearch(evt)
+function enterkeysearch(evt,modal_pwd)
 {
 evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象
   var key = evt.keyCode?evt.keyCode:evt.which; //兼容IE和Firefox获得keyBoardEvent对象的键值
   if(key == 13){ //判断是否是回车事件。
-  searchform();
+  searchform(modal_pwd);
  }
 }
 
