@@ -127,22 +127,15 @@ function check_login(userid, passwd,errorbox,formid)
     check_input_pwd(user, passwd,errorbox,formid);
 }
 
-function subkeycheck(et,userid, passwd,errorbox,formid)
+
+
+function subkeycheck(evt,userid, passwd,errorbox,formid)
 {
- var keyCode;
- if (window.event)
- {
-  keyCode = event.keyCode;
- }else
- {
-  keyCode = et.which;
- }
-
-  if (keyCode == 13)
-  {
-   check_login(userid, passwd,errorbox,formid);
+ evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象
+  var key = evt.keyCode?evt.keyCode:evt.which; //兼容IE和Firefox获得keyBoardEvent对象的键值
+  if(key == 13){ //判断是否是回车事件。
+  check_login(userid, passwd,errorbox,formid);
   }
-
 }
 
 	
