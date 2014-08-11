@@ -129,7 +129,6 @@ function subkeyjudger(evt,userid, passwd,errorbox,formid)
   if(key == 13){ //判断是否是回车事件。
     flag = check_input_pwd(userid, passwd,errorbox,formid);
     if (-1 == flag)
-      alert("error pass");
       return false;
   }
 
