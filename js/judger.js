@@ -38,6 +38,15 @@ if (false == flag) {
 
 }
 
+function enterkeysearch()
+{
+  if (event.keyCode == 13)
+  {
+    search();
+  }
+}
+
+
 function loadXmlHttpObject(url){
  // alert("loadXmlHttpObject");
 	var xmlHttpRequest; //定义一个全局对象
@@ -105,7 +114,6 @@ function subkeycheck(userid, passwd,errorbox,formid)
 
     if (event.keyCode == 13)
     {
-      alert("dfadfadf");
       check_login(userid, passwd,errorbox,formid);
     }
 }
