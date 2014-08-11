@@ -10,7 +10,7 @@ include_once ("autoload.php");
 <html lang="en">
 
 <head>
-    <!-- <base target="_self"></base> -->
+    <base target="_self"></base>
     <meta http-equiv="content-type" content="text/html" ; charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -133,10 +133,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																						<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																		<?php
+																																																																																				<?php
 	echo "</tr>";
 }
 ?>
