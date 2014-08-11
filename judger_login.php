@@ -77,7 +77,7 @@ if (isset($_SESSION['userid'])) {
 			<form action="judger_login.php" method="post" class="form-signin" role="form">
 				<h2 class="form-signin-heading">裁判登录</h2>
 				<input type="text" class="form-control" placeholder="请输入用户名" tabindex="1" name="user" id='user' value="<?php echo $_COOKIE['user'];?>" />
-				<input type="password" class="form-control" placeholder="请输入密码" tabindex="2" name="passwd" id="passwd" onkeydown='subkeycheck( "user", "passwd","errorbox" ,"submit")' value="<?php echo $_COOKIE['passwd'];?>"/><br />
+				<input type="password" class="form-control" placeholder="请输入密码" tabindex="2" name="passwd" id="passwd" onkeydown='subkeycheck(event, "user", "passwd","errorbox" ,"submit")' value="<?php echo $_COOKIE['passwd'];?>"/><br />
 				<button type='button' class='btn btn-lg btn-primary btn-block' name='submit' tabindex="3" id='submit'  onclick='check_login( "user", "passwd","errorbox" ,"submit")'>登录</button>
 			</form>
 <p id="errorbox" class="error_style"></p>
