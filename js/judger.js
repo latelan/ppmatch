@@ -107,7 +107,7 @@ function check_login(userid, passwd,errorbox,formid)
      return; 
     }
     check_input_pwd(user, passwd,errorbox,formid);
-    return 0;
+    return;
 }
 
 
@@ -129,7 +129,8 @@ function subkeyjudger(evt,userid, passwd,errorbox,formid)
   if(key == 13){ //判断是否是回车事件。
     flag = check_input_pwd(userid, passwd,errorbox,formid);
     if (-1 == flag)
-        return false;
+      alert("error pass");
+      return false;
   }
 
 }
