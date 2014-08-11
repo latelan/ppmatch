@@ -55,7 +55,7 @@ include_once ("autoload.php");
 <?php
 
 $userid = $_SESSION['userid'];
-echo " <input type='password' class='form-control' placeholder='请输入密码'' name='passwd' id='modal_pwd'  onkeydown=\"subkeycheck('$userid', 'modal_pwd','errorbox' ,'submit')\" />";
+echo " <input type='password' class='form-control' placeholder='请输入密码'' name='passwd' id='modal_pwd'  onkeydown=\"subkeyjudger(event,'$userid', 'modal_pwd','errorbox' ,'submit')\" />";
 ?><input type="hidden" name="team_id" value=""  id="hidden_team_name" />
                         			<input type="hidden" name="team_score" value=""  id="hidden_team_score" />
                                 </div>
@@ -132,10 +132,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																														<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																				<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																						<?php
+																																																																									<?php
 	echo "</tr>";
 }
 ?>
@@ -170,7 +170,7 @@ foreach ($team_all_info as $key => $value) {
                 </div>
                 <!-- /.col-lg-6 -->
 
-                <button class="btn btn-primary"  onclick="search()" >提交</button>
+                <button class="btn btn-primary"  onclick="searchform()" >提交</button>
             </div>
         </div>
         <!--end add_score_positation-->
