@@ -94,7 +94,7 @@ function check_input_pwd(userid, passwd,errorbox,formid) {
     }
 
     document.getElementById(formid).setAttribute("type","submit");
-    
+    alert("asdfaf");
 }
 //judger_login.php
 function check_login(userid, passwd,errorbox,formid)
