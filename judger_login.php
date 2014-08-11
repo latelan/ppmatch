@@ -26,6 +26,7 @@ include_once ("autoload.php");
 	</head>
 
 	<body>
+	<div class="container">
 	<div id="nav_position">
 		<ul class="nav nav-pills" role="tablist">
 			<li role="presentation">
@@ -36,6 +37,7 @@ include_once ("autoload.php");
 			 </li>
 		 </ul>
 		</div>
+	</div>
 
 <?php
 
