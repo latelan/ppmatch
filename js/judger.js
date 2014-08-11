@@ -33,10 +33,8 @@ if (false == flag) {
        alert("你输入队号不存在,请重新输入!");
        $('#myModal').modal('hide');
    }else{
-       // $('#myModal').modal('show');
-       $('#myModal').on('show.bs.modal',function(modal_pwd){
+       $('#myModal').modal('show');
        document.getElementById(modal_pwd).focus();
-     });
    }
 
 }
