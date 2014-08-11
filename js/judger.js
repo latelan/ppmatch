@@ -82,7 +82,7 @@ function check_input_pwd(userid, passwd,errorbox,formid) {
 
     if (pwd =="") {
         document.getElementById(errorbox).innerHTML="请输入确认密码!";
-     return;   
+     return -1;   
     }
     result = loadXmlHttpObject(url,errorbox);
 
@@ -90,7 +90,7 @@ function check_input_pwd(userid, passwd,errorbox,formid) {
     {
         document.getElementById(errorbox).innerHTML="你输入的密码有误，请重新输入!"
         document.getElementById(errorbox).value="";
-        return;
+        return -1;
     }
 
     document.getElementById(formid).setAttribute("type","submit");
@@ -107,6 +107,7 @@ function check_login(userid, passwd,errorbox,formid)
      return; 
     }
     check_input_pwd(user, passwd,errorbox,formid);
+    return 0;
 }
 
 
@@ -122,10 +123,14 @@ function subkeycheck(evt,userid, passwd,errorbox,formid)
 //judger.php
 function subkeyjudger(evt,userid, passwd,errorbox,formid) 
 {
+  var flag;
    evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象
   var key = evt.keyCode?evt.keyCode:evt.which; //兼容IE和Firefox获得keyBoardEvent对象的键值
   if(key == 13){ //判断是否是回车事件。
-  check_input_pwd(userid, passwd,errorbox,formid);
+    flag = check_input_pwd(userid, passwd,errorbox,formid);
+    if (-1 == flag)
+        return false;
   }
+
 }
 	
