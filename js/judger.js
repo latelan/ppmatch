@@ -30,6 +30,7 @@ function search() {
   
 if (false == flag) {
        alert("你输入队号不存在,请重新输入!");
+       val="";
        $('#myModal').modal('hide');
    }else{
        $('#myModal').modal('show');
