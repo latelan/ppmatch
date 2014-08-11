@@ -19,9 +19,12 @@ class judger {
 		$this->teamScore = $team_score;
 		$this->oper      = new operatedb();
 	}
-
+	
 	function saveTeamScore() {
-		$sql          = "update team set mark = '$this->teamScore' where team_id = '$this->teamId'";
+		$selectsql = "select mark from team where team_id = '$this->teamId'";
+		$mark = $this->oper->executeSQL($sql);
+		$mark += $this->teamScore;
+		$sql          = "update team set mark = '$mark' where team_id = '$this->teamId'";
 		$this->result = $this->oper->executeSQL($sql);
 	}
 
