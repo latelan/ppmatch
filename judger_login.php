@@ -28,7 +28,7 @@ include_once ("autoload.php");
 	<body>
 	<div class="container">
 	<div id="nav_position">
-		<ul class="nav nav-pills" role="tablist">
+		<ul class="nav nav-pills pull-right" >
 			<li role="presentation">
 				<a href="index.html">主页</a>
 			 </li>
