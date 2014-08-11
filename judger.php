@@ -80,8 +80,8 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
 
 <div class="container">
         <div id="nav_position">
-            <h3 class="text-muted">我是冠军</h3>
             <ul class="nav nav-pills " role="tablist">
+            <h3 class="text-muted">我是冠军</h3>
                 <li role="presentation">
 				<a href="judger.php" id="username" class="username"><?php echo '[ '.$_SESSION['userid'].' ]';?></a>
                 </li>
@@ -114,10 +114,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																								<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																															<?php
+																																																			<?php
 	echo "</tr>";
 }
 ?>
