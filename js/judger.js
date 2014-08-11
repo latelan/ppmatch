@@ -38,14 +38,32 @@ if (false == flag) {
 
 }
 
-function enterkeysearch()
+function enterkeysearch(et)
 {
-  if (event.keyCode == 13)
+ var keyCode;
+ if (window.event)
+ {
+  keyCode = event.keyCode;
+ }else
+ {
+  keyCode = et.which;
+ }
+
+  if (keyCode == 13)
   {
     search();
   }
+  // if  (et.keyCode)
+  // {
+  //  if (event.keyCode == 13)
+  //   {
+  //     search();
+  //   }else{
+  //     if (et.which == 13)
+  //       search();
+  //   }
+  // }
 }
-
 
 function loadXmlHttpObject(url){
  // alert("loadXmlHttpObject");
@@ -109,13 +127,22 @@ function check_login(userid, passwd,errorbox,formid)
     check_input_pwd(user, passwd,errorbox,formid);
 }
 
-function subkeycheck(userid, passwd,errorbox,formid)
+function subkeycheck(et,userid, passwd,errorbox,formid)
 {
+ var keyCode;
+ if (window.event)
+ {
+  keyCode = event.keyCode;
+ }else
+ {
+  keyCode = et.which;
+ }
 
-    if (event.keyCode == 13)
-    {
-      check_login(userid, passwd,errorbox,formid);
-    }
+  if (keyCode == 13)
+  {
+   check_login(userid, passwd,errorbox,formid);
+  }
+
 }
 
 	
