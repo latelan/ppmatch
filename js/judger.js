@@ -1,5 +1,5 @@
 ///修改模态框中数据
-function search() {
+function searchform() {
 
    var val = document.getElementById("Team").value;
    if (val == "") {
@@ -38,31 +38,13 @@ if (false == flag) {
 
 }
 
-function enterkeysearch(et)
+function enterkeysearch(evt)
 {
- var keyCode;
- if (window.event)
- {
-  keyCode = event.keyCode;
- }else
- {
-  keyCode = et.which;
+evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象
+  var key = evt.keyCode?evt.keyCode:evt.which; //兼容IE和Firefox获得keyBoardEvent对象的键值
+  if(key == 13){ //判断是否是回车事件。
+  searchform();
  }
-
-  if (keyCode == 13)
-  {
-    search();
-  }
-  // if  (et.keyCode)
-  // {
-  //  if (event.keyCode == 13)
-  //   {
-  //     search();
-  //   }else{
-  //     if (et.which == 13)
-  //       search();
-  //   }
-  // }
 }
 
 function loadXmlHttpObject(url){
@@ -89,7 +71,7 @@ function loadXmlHttpObject(url){
 		return textHTML;
 }
 
-	
+//judger.php	
 function check_input_pwd(userid, passwd,errorbox,formid) {
 
 
@@ -114,7 +96,7 @@ function check_input_pwd(userid, passwd,errorbox,formid) {
     document.getElementById(formid).setAttribute("type","submit");
     
 }
-
+//judger_login.php
 function check_login(userid, passwd,errorbox,formid)
 {
     var user=document.getElementById(userid).value;
@@ -128,7 +110,7 @@ function check_login(userid, passwd,errorbox,formid)
 }
 
 
-
+//judger_login.php
 function subkeycheck(evt,userid, passwd,errorbox,formid)
 {
  evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象
@@ -137,5 +119,13 @@ function subkeycheck(evt,userid, passwd,errorbox,formid)
   check_login(userid, passwd,errorbox,formid);
   }
 }
-
+//judger.php
+function subkeyjudger(evt,userid, passwd,errorbox,formid) 
+{
+   evt = (evt) ? evt : ((window.event) ? window.event : "") //兼容IE和Firefox获得keyBoardEvent对象
+  var key = evt.keyCode?evt.keyCode:evt.which; //兼容IE和Firefox获得keyBoardEvent对象的键值
+  if(key == 13){ //判断是否是回车事件。
+  check_input_pwd(userid, passwd,errorbox,formid);
+  }
+}
 	
