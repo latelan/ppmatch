@@ -52,8 +52,11 @@ include_once ("autoload.php");
                                     <span class="input-group-addon">
                                        <span class="glyphicon glyphicon-lock" ></span>
                                     </span>
-                                    <input type="password" class="form-control" placeholder="请输入密码" name="passwd" id="modal_pwd" />
-                                    <input type="hidden" name="team_id" value=""  id="hidden_team_name" />
+<?php
+
+$userid = $_SESSION['userid'];
+echo " <input type='password' class='form-control' placeholder='请输入密码'' name='passwd' id='modal_pwd'  onkeydown=\"subkeycheck('$userid', 'modal_pwd','errorbox' ,'submit')\" />";
+?><input type="hidden" name="team_id" value=""  id="hidden_team_name" />
                         			<input type="hidden" name="team_score" value=""  id="hidden_team_score" />
                                 </div>
                                 <!-- /input-group -->
@@ -129,10 +132,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																				<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																												<?php
+																																																																	<?php
 	echo "</tr>";
 }
 ?>
