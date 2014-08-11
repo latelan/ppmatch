@@ -1,4 +1,9 @@
 <?php
+// Author: zbqyexingknog
+// Creat Date: 2014.8
+// Email: zbqyexingkong@163.com
+// Github:https://github.com/zbqyxingkong
+
 session_start();
 include_once ("autoload.php");
 ?>

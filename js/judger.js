@@ -1,3 +1,9 @@
+// Author: zbqyexingknog
+// Creat Date: 2014.8
+// Email: zbqyexingkong@163.com
+// Github:https://github.com/zbqyxingkong
+
+
 ///修改模态框中数据
 function searchform(modal_pwd) {
 
@@ -34,7 +40,6 @@ if (false == flag) {
        $('#myModal').modal('hide');
    }else{
        $('#myModal').modal('show');
-       document.getElementById(modal_pwd).focus();
    }
 
 }

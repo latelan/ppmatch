@@ -1,4 +1,8 @@
 <?php
+// Author: zbqyexingknog
+// Creat Date: 2014.8
+// Email: zbqyexingkong@163.com
+// Github:https://github.com/zbqyxingkong
 
 session_start();
 if (!isset($_SESSION['userid'])) {
@@ -84,18 +88,6 @@ echo "<button type='button' class='btn btn-primary' name='submit' id='submit'  o
 
 
 <div class="container">
-       <!--      <h3 class="text-muted">我是冠军</h3>
-        <div id="nav_position">
-            <ul class="nav nav-pills " role="tablist">
-                <li role="presentation">
-                </li>
-                <li role="presentation">
-				<a href="index.html">主页</a>
-				</li>
-                <li role="presentation"><a href="judger_login.php?action=logout">退出</a>
-                </li>
-            </ul>
-        </div> -->
 
         <div class="header">
         <ul class="nav nav-pills pull-right">
@@ -134,10 +126,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																												<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																																<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																					<?php
+																																																																																							<?php
 	echo "</tr>";
 }
 ?>
