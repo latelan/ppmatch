@@ -10,6 +10,7 @@ include_once ("autoload.php");
 <html lang="en">
 
 <head>
+    <base target="_self"></base>
     <meta http-equiv="content-type" content="text/html" ; charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,7 @@ include_once ("autoload.php");
 <?php
 
 $userid = $_SESSION['userid'];
-echo " <input type='password' class='form-control' placeholder='请输入密码'' name='passwd' id='modal_pwd'  onkeydown=\"subkeyjudger(event,'$userid', 'modal_pwd','errorbox' ,'submit')\" />";
+echo " <input type='password' class='form-control' placeholder='请输入密码'' name='passwd' id='modal_pwd'  onkeydown=\" return subkeyjudger(event,'$userid', 'modal_pwd','errorbox' ,'submit')\" />";
 ?><input type="hidden" name="team_id" value=""  id="hidden_team_name" />
                         			<input type="hidden" name="team_score" value=""  id="hidden_team_score" />
                                 </div>
@@ -132,10 +133,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																												<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																				<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																													<?php
+																																																																																	<?php
 	echo "</tr>";
 }
 ?>
@@ -152,7 +153,7 @@ foreach ($team_all_info as $key => $value) {
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-user"></span>
                         </span>
-                        <input type="text" class="form-control" placeholder="队伍编号" id="Team" onkeydown="enterkeysearch(event)" />
+                        <input type="text" class="form-control" placeholder="队伍编号" id="Team" onkeydown=" enterkeysearch(event)" />
                     </div>
                     <!-- /input-group -->
                 </div>
