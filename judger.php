@@ -124,10 +124,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																																																		<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																																																				<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																																<?php
+																																																																																																	<?php
 	echo "</tr>";
 }
 ?>
