@@ -132,10 +132,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																				<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																												<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																									<?php
+																																																																													<?php
 	echo "</tr>";
 }
 ?>
@@ -152,7 +152,7 @@ foreach ($team_all_info as $key => $value) {
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-user"></span>
                         </span>
-                        <input type="text" class="form-control" placeholder="队伍编号" id="Team" />
+                        <input type="text" class="form-control" placeholder="队伍编号" id="Team" onkeydown="enterkeysearch(event)" />
                     </div>
                     <!-- /input-group -->
                 </div>
@@ -164,7 +164,7 @@ foreach ($team_all_info as $key => $value) {
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-leaf"></span>
                         </span>
-                        <input type="text" class="form-control" placeholder="所加积分(默认为1分)" id="team_score" onkeydown="enterkeysearch()" />
+                        <input type="text" class="form-control" placeholder="所加积分(默认为1分)" id="team_score" onkeydown="enterkeysearch(event)" />
                     </div>
                     <!-- /input-group -->
                 </div>
