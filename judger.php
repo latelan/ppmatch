@@ -126,10 +126,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																																<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																																				<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																							<?php
+																																																																																									<?php
 	echo "</tr>";
 }
 ?>
@@ -140,7 +140,7 @@ foreach ($team_all_info as $key => $value) {
         <div class="add_score_positation">
             <p class="add_score_text_style">我--只为胜者加分</p>
 
-            <div class="row ">
+            <div class="row inupt_positation_style ">
                 <div class="col-lg-4 col-sm-6">
                     <div class="input-group">
                         <span class="input-group-addon">
