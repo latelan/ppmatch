@@ -121,10 +121,5 @@ thead>tr>th {
 }
 .inupt_positation_style
 {
-    padding-left: 100px;
-}
-#btn_positation_style
-{
-    margin-top: 17px;
-    margin-bottom: 20px; 
+    padding: 100px 0;
 }
