@@ -22,12 +22,11 @@ class judger {
 	
 	function saveTeamScore() {
 		$selectsql = "select mark from team where team_id = '$this->teamId'";
-		$mark = $this->oper->executeSQL($sql);
+		$marks = $this->oper->executeSQL($selectsql);
+		$mark = $marks[0]['mark'];
 		$mark += $this->teamScore;
 		$sql   = "update team set mark = '$mark' where team_id = '$this->teamId'";
 		$this->result = $this->oper->executeSQL($sql);
-
-		return $mark;
 	}
 
 	function getResult() {
