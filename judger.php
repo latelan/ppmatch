@@ -124,10 +124,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																																																																																																				<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																																																																																																												<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																																																									<?php
+																																																																																																																													<?php
 	echo "</tr>";
 }
 ?>
@@ -149,8 +149,8 @@ foreach ($team_all_info as $key => $value) {
                     <!-- /input-group -->
                 </div>
                 <!-- /.col-lg-6 -->
-
-
+                </div>
+                <div class="row input_positation_style "><
                 <div class="col-lg-5 col-sm-7">
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -162,8 +162,8 @@ foreach ($team_all_info as $key => $value) {
                 </div>
                 <!-- /.col-lg-6 -->
             </div>
-            <div class="row">
-                <div id="btn_positation_style" class="col-lg-4 col-sm-6  col-sm-offset-5 col-md-offset-4">
+            <div class="row input_positation_style">
+                <div  class="col-lg-5 col-sm-7 ">
                 <button class="btn btn-primary btn-block"  onclick="searchform()" >提&nbsp;
 &nbsp;
 &nbsp;
