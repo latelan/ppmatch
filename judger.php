@@ -124,10 +124,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																																																																																																																						<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																																																																																																																												<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																																																																		<?php
+																																																																																																																																					<?php
 	echo "</tr>";
 }
 ?>
@@ -137,8 +137,8 @@ foreach ($team_all_info as $key => $value) {
 
         <div class="add_score_positation">
             <p class="add_score_text_style">我--只为胜者加分</p>
-        <div class="inupt_positation_style">
-            <div class="row">
+
+            <div class="row inupt_positation_style">
                 <div class="col-lg-5 col-sm-7 col-lg-offset-3 col-sm-offset-5">
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -150,7 +150,7 @@ foreach ($team_all_info as $key => $value) {
                 </div>
                 <!-- /.col-lg-6 -->
                 </div>
-                <div class="row ">
+                <div class="row inupt_positation_style">
                 <div class="col-lg-5 col-sm-7  col-lg-offset-3 col-sm-offset-5">
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -162,7 +162,7 @@ foreach ($team_all_info as $key => $value) {
                 </div>
                 <!-- /.col-lg-6 -->
             </div>
-            <div class="row">
+            <div class="row inupt_positation_style">
                 <div  class="col-lg-5 col-sm- col-lg-offset-3 col-sm-offset-5">
                 <button class="btn btn-primary btn-block"  onclick="searchform()" >提&nbsp;
 &nbsp;
@@ -171,7 +171,7 @@ foreach ($team_all_info as $key => $value) {
 交</button>
                 </div>
             </div>
-            </div>
+
         </div>
         <!--end add_score_positation-->
     </div>
