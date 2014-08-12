@@ -124,10 +124,10 @@ foreach ($team_all_info as $key => $value) {
 
 	foreach ($value as $keys => $values) {
 		?>
-																																																																																																																																																																																																										<td><?php echo $team_all_info[$key][$keys];?></td>
+																																																																																																																																																																																																														<td><?php echo $team_all_info[$key][$keys];?></td>
 		<?php
 	}?>
-																																																																																																												<?php
+																																																																																																														<?php
 	echo "</tr>";
 }
 ?>
@@ -163,8 +163,8 @@ foreach ($team_all_info as $key => $value) {
                 <!-- /.col-lg-6 -->
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                <button id="btn_positation_style" class="btn btn-primary btn-block"  onclick="searchform()" >提&nbsp;
+                <div class="col-lg-4 col-sm-6  col-sm-offset-6">
+                <button class="btn btn-primary btn-block"  onclick="searchform()" >提&nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
