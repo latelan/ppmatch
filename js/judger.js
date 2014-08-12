@@ -10,6 +10,7 @@ function searchform(modal_pwd) {
    var val = document.getElementById("Team").value;
    if (val == "") {
        alert("请输入队伍编号！");
+       return;
    }
    var score=document.getElementById("team_score").value;
    var info = document.getElementById("info"); //表格
