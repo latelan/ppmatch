@@ -102,8 +102,8 @@ thead>tr>th {
     font-family: sans-serif;
     font-size: 25px;
     font-weight: 600;
-    margin-left: 34%;
     margin-bottom: 30px;
+    text-align: center;
 }
 .team_text_style {
     padding: 2px 5px;
